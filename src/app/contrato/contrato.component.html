@@ -1,7 +1,5 @@
-<h1 class="p-3 text-center">Contrato de Titular</h1>
-
-<div class="container-fluid pl-5 pr-5">
-
+<h1>Contrato de Titular</h1>
+<div class="container-fluid pl-5 pr-5 ">
     <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item" role="presentation">
             <a class="nav-link active" id="home-tab" data-toggle="tab" href="#cliente" role="tab">Cliente</a>
@@ -44,60 +42,76 @@
 
     <div class="tab-content" *ngFor='let item of lista'>
 
-        <div class="tab-pane fade show active" id="cliente" role="tabpanel">
+        <div class="tab-pane fade show active bg-transparent" id="cliente" role="tabpanel">
             <div class="container-fluid p-3">
                 <div class="row">
                     <div class="col-md-4">
                         <label>Data Vigencia: </label>
                         <input type="text" placeholder="Data Vigencia" [(ngModel)]='item.dataVigencia'
-                            class="form-control">
+                            class="form-control form-control-sm">
                         <label>Data Vencimento: </label>
                         <input type="text" placeholder="Data Vencimento" [(ngModel)]='item.dataVencimento'
-                            class="form-control">
+                            class="form-control form-control-sm">
                         <label>Valor Total: </label>
                         <input type="number" placeholder="Valor Total" [(ngModel)]='item.valorTotal'
-                            class="form-control">
+                            class="form-control form-control-sm">
                         <label>Valor Taxa Associativa: </label>
                         <input type="number" placeholder="Taxa Associativa" [(ngModel)]='item.valorTaxaAssociativa'
-                            class="form-control">
+                            class="form-control form-control-sm">
                         <label>Taxa Cadastro: </label>
                         <input type="number" placeholder="Taxa Cadastro" [(ngModel)]='item.taxaCadastro'
-                            class="form-control">
+                            class="form-control form-control-sm">
                         <label>Valor Total Mensal: </label>
                         <input type="number" placeholder="Valor Total Mensal" [(ngModel)]='item.valorTotalMensal'
-                            class="form-control">
+                            class="form-control form-control-sm">
                         <label>Numero Proposta: </label>
                         <input type="text" placeholder="Numero Proposta" [(ngModel)]='item.numeroProposta'
-                            class="form-control">
+                            class="form-control form-control-sm">
                     </div>
                     <div class="col-md-4">
                         <label>Quant Recorrencia Anual: </label>
                         <input type="number" placeholder="Quant Recorrencia Anual"
-                            [(ngModel)]='item.qtdRecorrenciaAnualTaxaAssociativa' class="form-control">
+                            [(ngModel)]='item.qtdRecorrenciaAnualTaxaAssociativa' class="form-control form-control-sm">
                         <label>Descrição Recorrencia Taxa Associativa: </label>
                         <input type="text" placeholder="Descrição Taxa associativa"
-                            [(ngModel)]='item.descricaoRecorrenciaTaxaAssociativa' class="form-control">
+                            [(ngModel)]='item.descricaoRecorrenciaTaxaAssociativa' class="form-control form-control-sm">
+                        <button (click)='gravar()' class="btn btn-info mr-2 mt-2">Gravar Contrato</button>
+                    </div>
+                    <div class="col-md-4 fundo">
                     </div>
                 </div>
-                <button (click)='gravar()' class="btn btn-dark mr-2 mt-2">Gravar</button>
             </div>
         </div>
 
         <div class="tab-pane fade" id="subcontrato" role="tabpanel">
             <div class="container-fluid p-3">
-                <div class="col-md-4">
-                    <label class="mt-2 mr-2">Subcontrato: </label>
-                    <input type="number" placeholder="Subcontrato" [(ngModel)]='item.subcontrato.id'
-                        class="form-control"><br>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label class="mt-2 mr-2">Subcontrato: </label>
+                        <input type="number" placeholder="Subcontrato" [(ngModel)]='item.subcontrato.id'
+                            class="form-control"><br>
+                    </div>
+                    <div class="col-md-4">
+                    </div>
+                    <div class="col-md-4 fundo" style="height: 500px;">
+                    </div>
                 </div>
             </div>
         </div>
 
+
         <div class="tab-pane fade" id="contrato" role="tabpanel">
             <div class="container-fluid p-3">
-                <div class="col-md-4">
-                    <label class="mt-2 mr-2">Contrato: </label>
-                    <input type="number" placeholder="Contrato" [(ngModel)]='item.contrato.id' class="form-control"><br>
+                <div class="row">
+                    <div class="col-md-4">
+                        <label class="mt-2 mr-2">Contrato: </label>
+                        <input type="number" placeholder="Contrato" [(ngModel)]='item.contrato.id'
+                            class="form-control"><br>
+                    </div>
+                    <div class="col-md-4">
+                    </div>
+                    <div class="col-md-4 fundo" style="height: 500px;">
+                    </div>
                 </div>
             </div>
         </div>
@@ -122,22 +136,32 @@
                         <input type="number" placeholder="Telefone Operadora" [(ngModel)]='item.operadora.telefone'
                             class="form-control">
                     </div>
+                    <div class="col-md-4">
+                    </div>
+                    <div class="col-md-4 fundo" style="height: 500px;">
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="tab-pane fade" id="entidade" role="tabpanel">
             <div class="container-fluid p-3">
-                <div class="col-md-4">
-                    <label>Id: </label>
-                    <input type="number" placeholder="Codigo Entidade" [(ngModel)]='item.entidade.id'
-                        class="form-control">
-                    <label>Sigla: </label>
-                    <input type="text" placeholder="Sigla Entidade" [(ngModel)]='item.entidade.sigla'
-                        class="form-control">
-                    <label>Nome: </label>
-                    <input type="text" placeholder="Nome Entidade" [(ngModel)]='item.entidade.nome'
-                        class="form-control">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label>Id: </label>
+                        <input type="number" placeholder="Codigo Entidade" [(ngModel)]='item.entidade.id'
+                            class="form-control">
+                        <label>Sigla: </label>
+                        <input type="text" placeholder="Sigla Entidade" [(ngModel)]='item.entidade.sigla'
+                            class="form-control">
+                        <label>Nome: </label>
+                        <input type="text" placeholder="Nome Entidade" [(ngModel)]='item.entidade.nome'
+                            class="form-control">
+                    </div>
+                    <div class="col-md-4">
+                    </div>
+                    <div class="col-md-4 fundo" style="height: 500px;">
+                    </div>
                 </div>
             </div>
         </div>
@@ -230,7 +254,7 @@
                         <input type="number" placeholder="Recorrencia Meses"
                             [(ngModel)]='item.plano.recorrenciaPromocaoMeses' class="form-control form-control-sm">
                     </div>
-                    <div class="col-md-3">
+                    <div class="col-md-3 fundo2">
                         <label>Ind Promocional: </label>
                         <input type="number" placeholder="Promocional" [(ngModel)]='item.plano.indPromocional'
                             class="form-control form-control-sm">
@@ -274,7 +298,6 @@
                         <input type="text" placeholder="DNV Titular" [(ngModel)]='item.titular.dnv'
                             class="form-control form-control-sm">
                     </div>
-
                     <div class="col-md-3">
                         <label>Email: </label>
                         <input type="text" placeholder="Email Titular" [(ngModel)]='item.titular.email'
@@ -301,7 +324,6 @@
                         <input type="number" placeholder="Numero Carteirinha Titular"
                             [(ngModel)]='item.titular.numeroCarteirinha' class="form-control form-control-sm">
                     </div>
-
                     <div class="col-md-3">
                         <label>Id: </label>
                         <input type="number" placeholder="Codigo Estado Civil" [(ngModel)]='item.titular.estadoCivil.id'
@@ -331,7 +353,6 @@
                         <input type="number" placeholder="Complemento" [(ngModel)]='item.titular.endereco.complemento'
                             class="form-control form-control-sm">
                     </div>
-
                     <div class="col-md-3">
                         <label>Bairro: </label>
                         <input type="text" placeholder="Bairro" [(ngModel)]='item.titular.endereco.bairro'
@@ -391,9 +412,7 @@
                         <label>Valor do Plano: </label>
                         <input type="number" placeholder="Valor Plano"
                             [(ngModel)]='item.titular.dependente[0].valorPlano' class="form-control form-control-sm">
-
                     </div>
-
                     <div class="col-md-4">
                         <label>Idade: </label>
                         <input type="number" placeholder="Idade Dependente"
@@ -422,120 +441,149 @@
                             [(ngModel)]='item.titular.dependente[0].grauParentesco.descricao'
                             class="form-control form-control-sm">
                     </div>
+                    <div class="col-md-4 fundo">
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="tab-pane fade" id="corretora" role="tabpanel">
             <div class="container-fluid p-3">
-                <div class="col-md-4">
-                    <label>Id: </label>
-                    <input type="number" placeholder="Codigo Corretora" [(ngModel)]='item.corretora.id'
-                        class="form-control form-control-sm">
-                    <label>CNPJ: </label>
-                    <input type="number" placeholder="CNPJ Corretora" [(ngModel)]='item.corretora.cnpj'
-                        class="form-control form-control-sm">
-                    <label>Nome: </label>
-                    <input type="text" placeholder="Nome Corretora" [(ngModel)]='item.corretora.nome'
-                        class="form-control form-control-sm">
-                    <label>Razão Social: </label>
-                    <input type="text" placeholder="Razão Social Corretora" [(ngModel)]='item.corretora.razapSocial'
-                        class="form-control form-control-sm">
-                    <label>Possui Supervisor: </label>
-                    <input type="text" placeholder="Supervisor Corretora" [(ngModel)]='item.corretora.possuiSupervisor'
-                        class="form-control form-control-sm">
-                    <label>Codigo: </label>
-                    <input type="number" placeholder="Codigo Corretora" [(ngModel)]='item.corretora.codigo'
-                        class="form-control form-control-sm">
-                    <label>Email: </label>
-                    <input type="text" placeholder="Email Corretora" [(ngModel)]='item.corretora.email'
-                        class="form-control form-control-sm">
-                    <label>Ind Ativo: </label>
-                    <input type="text" placeholder="Ind Ativo Corretora" [(ngModel)]='item.corretora.indAtivo'
-                        class="form-control form-control-sm">
-                    <label>Ind Liberação Colaborador: </label>
-                    <input type="text" placeholder="Ind Liberação" [(ngModel)]='item.corretora.indLiberacaoColaborador'
-                        class="form-control form-control-sm">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label>Id: </label>
+                        <input type="number" placeholder="Codigo Corretora" [(ngModel)]='item.corretora.id'
+                            class="form-control form-control-sm">
+                        <label>CNPJ: </label>
+                        <input type="number" placeholder="CNPJ Corretora" [(ngModel)]='item.corretora.cnpj'
+                            class="form-control form-control-sm">
+                        <label>Nome: </label>
+                        <input type="text" placeholder="Nome Corretora" [(ngModel)]='item.corretora.nome'
+                            class="form-control form-control-sm">
+                        <label>Razão Social: </label>
+                        <input type="text" placeholder="Razão Social Corretora" [(ngModel)]='item.corretora.razapSocial'
+                            class="form-control form-control-sm">
+                        <label>Possui Supervisor: </label>
+                        <input type="text" placeholder="Supervisor Corretora"
+                            [(ngModel)]='item.corretora.possuiSupervisor' class="form-control form-control-sm">
+                    </div>
+                    <div class="col-md-4">
+                        <label>Codigo: </label>
+                        <input type="number" placeholder="Codigo Corretora" [(ngModel)]='item.corretora.codigo'
+                            class="form-control form-control-sm">
+                        <label>Email: </label>
+                        <input type="text" placeholder="Email Corretora" [(ngModel)]='item.corretora.email'
+                            class="form-control form-control-sm">
+                        <label>Ind Ativo: </label>
+                        <input type="text" placeholder="Ind Ativo Corretora" [(ngModel)]='item.corretora.indAtivo'
+                            class="form-control form-control-sm">
+                        <label>Ind Liberação Colaborador: </label>
+                        <input type="text" placeholder="Ind Liberação"
+                            [(ngModel)]='item.corretora.indLiberacaoColaborador' class="form-control form-control-sm">
+                    </div>
+                    <div class="col-md-4 fundo" style="height: 500px;">
+                    </div>
                 </div>
             </div>
         </div>
 
+
         <div class="tab-pane fade" id="administradora" role="tabpanel">
             <div class="container-fluid p-3">
-                <div class="col-md-4">
-                    <label>Id: </label>
-                    <input type="number" placeholder="Codigo Corretora" [(ngModel)]='item.administradora.id'
-                        class="form-control form-control-sm">
-                    <label>codigoANS: </label>
-                    <input type="number" placeholder="codigoANS Corretora" [(ngModel)]='item.administradora.codigoANS'
-                        class="form-control form-control-sm">
-                    <label>site: </label>
-                    <input type="text" placeholder="site Corretora" [(ngModel)]='item.administradora.site'
-                        class="form-control form-control-sm">
-                    <label>telefone: </label>
-                    <input type="text" placeholder="telefone Corretora" [(ngModel)]='item.administradora.telefone'
-                        class="form-control form-control-sm">
-                    <label>cnpj: </label>
-                    <input type="text" placeholder="cnpj Corretora" [(ngModel)]='item.administradora.cnpj'
-                        class="form-control form-control-sm">
-                    <label>nomeFantasia: </label>
-                    <input type="text" placeholder="nomeFantasia" [(ngModel)]='item.administradora.nomeFantasia'
-                        class="form-control form-control-sm">
-                    <label>razaoSocial: </label>
-                    <input type="text" placeholder="razaoSocial Corretora" [(ngModel)]='item.administradora.razaoSocial'
-                        class="form-control form-control-sm">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label>Id: </label>
+                        <input type="number" placeholder="Codigo Corretora" [(ngModel)]='item.administradora.id'
+                            class="form-control form-control-sm">
+                        <label>codigoANS: </label>
+                        <input type="number" placeholder="codigoANS Corretora"
+                            [(ngModel)]='item.administradora.codigoANS' class="form-control form-control-sm">
+                        <label>site: </label>
+                        <input type="text" placeholder="site Corretora" [(ngModel)]='item.administradora.site'
+                            class="form-control form-control-sm">
+                        <label>telefone: </label>
+                        <input type="text" placeholder="telefone Corretora" [(ngModel)]='item.administradora.telefone'
+                            class="form-control form-control-sm">
+                        <label>cnpj: </label>
+                        <input type="text" placeholder="cnpj Corretora" [(ngModel)]='item.administradora.cnpj'
+                            class="form-control form-control-sm">
+                        <label>nomeFantasia: </label>
+                        <input type="text" placeholder="nomeFantasia" [(ngModel)]='item.administradora.nomeFantasia'
+                            class="form-control form-control-sm">
+                        <label>razaoSocial: </label>
+                        <input type="text" placeholder="razaoSocial Corretora"
+                            [(ngModel)]='item.administradora.razaoSocial' class="form-control form-control-sm">
+                    </div>
+                    <div class="col-md-4">
+                    </div>
+                    <div class="col-md-4 fundo">
+                    </div>
                 </div>
+
             </div>
         </div>
 
         <div class="tab-pane fade" id="corretor" role="tabpanel">
             <div class="container-fluid p-3">
-                <div class="col-md-4">
-                    <label>Id: </label>
-                    <input type="number" placeholder="Codigo Corretor" [(ngModel)]='item.corretor.id'
-                        class="form-control form-control-sm">
-                    <label>CPF: </label>
-                    <input type="number" placeholder="CPF Corretor" [(ngModel)]='item.corretor.cpf'
-                        class="form-control form-control-sm">
-                    <label>Nome: </label>
-                    <input type="text" placeholder="Nome Corretor" [(ngModel)]='item.corretor.nome'
-                        class="form-control form-control-sm">
-                    <label>Email: </label>
-                    <input type="text" placeholder="Email Corretor" [(ngModel)]='item.corretor.email'
-                        class="form-control form-control-sm">
-                    <label>Celular: </label>
-                    <input type="number" placeholder="Celular Corretor" [(ngModel)]='item.corretor.celular'
-                        class="form-control form-control-sm">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label>Id: </label>
+                        <input type="number" placeholder="Codigo Corretor" [(ngModel)]='item.corretor.id'
+                            class="form-control form-control-sm">
+                        <label>CPF: </label>
+                        <input type="number" placeholder="CPF Corretor" [(ngModel)]='item.corretor.cpf'
+                            class="form-control form-control-sm">
+                        <label>Nome: </label>
+                        <input type="text" placeholder="Nome Corretor" [(ngModel)]='item.corretor.nome'
+                            class="form-control form-control-sm">
+                        <label>Email: </label>
+                        <input type="text" placeholder="Email Corretor" [(ngModel)]='item.corretor.email'
+                            class="form-control form-control-sm">
+                        <label>Celular: </label>
+                        <input type="number" placeholder="Celular Corretor" [(ngModel)]='item.corretor.celular'
+                            class="form-control form-control-sm">
+                    </div>
+                    <div class="col-md-4">
+                    </div>
+                    <div class="col-md-4 fundo" style="height: 500px;">
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="tab-pane fade" id="supervisor" role="tabpanel">
             <div class="container-fluid p-3">
-                <div class="col-md-4">
-                    <label>Id: </label>
-                    <input type="number" placeholder="Codigo Supervisor" [(ngModel)]='item.supervisor.id'
-                        class="form-control form-control-sm">
-                    <label>Corretora: </label>
-                    <input type="text" placeholder="Corretora" [(ngModel)]='item.supervisor.corretor.id'
-                        class="form-control form-control-sm">
-                    <label>Id: </label>
-                    <input type="number" placeholder="Codigo Corretor" [(ngModel)]='item.supervisor.corretor.id'
-                        class="form-control form-control-sm">
-                    <label>CPF: </label>
-                    <input type="number" placeholder="CPF Corretor" [(ngModel)]='item.supervisor.corretor.cpf'
-                        class="form-control form-control-sm">
-                    <label>Nome: </label>
-                    <input type="text" placeholder="Nome Corretor" [(ngModel)]='item.supervisor.corretor.nome'
-                        class="form-control form-control-sm">
-                    <label>Email: </label>
-                    <input type="text" placeholder="Email Corretor" [(ngModel)]='item.supervisor.corretor.email'
-                        class="form-control form-control-sm">
-                    <label>Celular: </label>
-                    <input type="number" placeholder="Celular Corretor" [(ngModel)]='item.supervisor.corretor.celular'
-                        class="form-control form-control-sm">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label>Id: </label>
+                        <input type="number" placeholder="Codigo Supervisor" [(ngModel)]='item.supervisor.id'
+                            class="form-control form-control-sm">
+                        <label>Corretora: </label>
+                        <input type="text" placeholder="Corretora" [(ngModel)]='item.supervisor.corretor.id'
+                            class="form-control form-control-sm">
+                        <label>Id: </label>
+                        <input type="number" placeholder="Codigo Corretor" [(ngModel)]='item.supervisor.corretor.id'
+                            class="form-control form-control-sm">
+                        <label>CPF: </label>
+                        <input type="number" placeholder="CPF Corretor" [(ngModel)]='item.supervisor.corretor.cpf'
+                            class="form-control form-control-sm">
+                        <label>Nome: </label>
+                        <input type="text" placeholder="Nome Corretor" [(ngModel)]='item.supervisor.corretor.nome'
+                            class="form-control form-control-sm">
+                        <label>Email: </label>
+                        <input type="text" placeholder="Email Corretor" [(ngModel)]='item.supervisor.corretor.email'
+                            class="form-control form-control-sm">
+                        <label>Celular: </label>
+                        <input type="number" placeholder="Celular Corretor"
+                            [(ngModel)]='item.supervisor.corretor.celular' class="form-control form-control-sm">
+                    </div>
+                    <div class="col-md-4">
+                    </div>
+                    <div class="col-md-4 fundo" style="height: 500px;">
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+
 </div>
