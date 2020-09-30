@@ -1,0 +1,21 @@
+h1{
+    background-color: #C6E3F1 !important;
+    padding: 30px !important;
+    text-align: center;
+}
+.fundo{
+    background-image: url("/assets/imagens/2787860.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: right;
+    /* margin-top: 100px; */
+}
+
+.fundo2{
+    background-image: url("/assets/imagens/2787860.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: right;
+    background-position-y: bottom;
+
+}
